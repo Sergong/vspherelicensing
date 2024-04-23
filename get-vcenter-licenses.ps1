@@ -2,8 +2,9 @@
 
   Simple script to dump license information in vCenter
   Assumes we have an existing vCenter connection open
+  Should work for vCenter 6.5
 
 #>
 
-$licenseDataManager = Get-LicenseDataManager
-$licenseDataManager.QueryEntityLicenseData()
+$licMgr = Get-View licensemanager
+$licMgr.Licenses
